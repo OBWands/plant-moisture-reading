@@ -49,7 +49,7 @@ for i in range (number_of_sensor_readings):
 temp = round(sum(temp_list)/len(temp_list),2)
 print(f'Temp: {temp}')
 
-if moisture < 1055:
+if moisture < 955:
     watering_needed = 1
 else:
     watering_needed = 0
