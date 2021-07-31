@@ -6,9 +6,9 @@ import time
 from adafruit_seesaw.seesaw import Seesaw
 from configparser import ConfigParser
 
-filepath = "./Pothos2.csv"
+filepath = "/home/pi/plant-moisture-reading/Pothos2.csv"
 parser = ConfigParser()
-parser.read('dev.ini')
+parser.read('/home/pi/plant-moisture-reading/dev.ini')
 alert_email = parser.get('email_subject', 'status_alert')
 send_email = sendemail.send_alert_email
 

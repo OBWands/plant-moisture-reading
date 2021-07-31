@@ -8,14 +8,14 @@ def send_alert_email(email_subject):
     from email.utils import COMMASPACE
     
     parser = ConfigParser()
-    parser.read('dev.ini')
+    parser.read('/home/pi/plant-moisture-reading/dev.ini')
     my_email = parser.get('email_settings', 'email_from')
     my_password = parser.get('email_settings', 'email_from_pass')
     to_email = parser.get('email_settings', 'email_to')
     smtp_server = parser.get('email_settings', 'email_server')
     smtp_port = parser.getint('email_settings', 'email_port')
     filename = 'Pothos2.csv'
-    filepath = './Pothos2.csv'
+    filepath = '/home/pi/plant-moisture-reading/Pothos2.csv'
     
     subject = email_subject
     # Taking the latest moisture and temp readings from filepath
@@ -26,7 +26,7 @@ def send_alert_email(email_subject):
     temp = last_line_list[2]
     body = (
 			f"Here is the latest reading:\n\n"
-            f"Moisture: {moisture}"
+            f"Moisture: {moisture}\n"
             f"Temperature: {temp}"
             )
 
