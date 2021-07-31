@@ -97,7 +97,7 @@ row_count = len(list(reader))
 # Make row count negative to use in function
 neg_row_count = row_count * -1
 rows_to_count = 12  # Needs to be greater than 2, 1 row = 15 min
-rows_to_count_value = int((rows_to_count + 2) * -1)
+rows_to_count_value = (rows_to_count + 2) * -1
 
 if watering_needed == 1:    
     if row_count >= rows_to_count:
