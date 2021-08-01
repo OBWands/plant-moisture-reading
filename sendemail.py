@@ -18,14 +18,13 @@ def send_alert_email(email_subject):
     filepath = parser.get('file_paths', 'pothos2_file_path')
     
     subject = email_subject
-    # Taking the latest moisture and temp readings from filepath
+    # Taking the latest moisture and temp readings
     with open(filepath, "r") as f1:
         last_line = f1.readlines()[-1]
         last_line_list = last_line.split(",")
     moisture = last_line_list[1]
     temp = last_line_list[2]
-    body = (
-			f"Here is the latest reading:\n\n"
+    body = (f"Here is the latest reading:\n\n"
             f"Moisture: {moisture}\n"
             f"Temperature: {temp}"
             )
